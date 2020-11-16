@@ -5,6 +5,7 @@ You can use the [editor on GitHub](https://github.com/nicolas-chan/nicolas-chan.
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
+![](https://github.com/nicolas-chan/nicolas-chan.github.io/blob/main/0883500a0e5f45d8852c1d8430e55464.jpeg?raw=true)
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
