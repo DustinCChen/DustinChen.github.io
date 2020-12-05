@@ -5,7 +5,7 @@ You can use the [editor on GitHub](https://github.com/nicolas-chan/nicolas-chan.
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ## 技术沉淀
-![](https://github.com/nicolas-chan/nicolas-chan.github.io/blob/main/0883500a0e5f45d8852c1d8430e55464.jpeg?raw=true)
+![](https://github.com/nicolas-chan/nicolas-chan.github.io/blob/main/supplement/a-comme-amour.jpeg?raw=true)
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
@@ -13,7 +13,7 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ## 探数寻理
-
+![](https://github.com/nicolas-chan/nicolas-chan.github.io/blob/main/supplement/whisper-of-the-fall.jpg?raw=true)
 
 ## 思想沉淀
 
