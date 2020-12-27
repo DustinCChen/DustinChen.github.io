@@ -1,4 +1,7 @@
 # 人格类型 INFP-T
+
+一句话概括INFP：情绪深刻、敏感而又“迟钝”、理想主义、洞察力、三分钟热度、拖延症、抑郁倾向、同理心、利他主义、追求自我理解。
+
 ## “调停者” 人格
 调停者人格类型的人是真正的理想主义者，他们总是从最坏的人和事中寻找最好的一面，想方设法让情况变得更好。 
 虽然可能看起来冷静，内向甚至害羞，但他们内心的火焰和热情可以光芒四射。 
@@ -56,3 +59,120 @@ This desire to please others can drown out their own inner wisdom and make them 
 * Difficult to Get to Know – Mediators are private, reserved, and sometimes self-conscious. 
 This can make them somewhat difficult to really get to know. 
 Their need for personal space can contribute to the guilt they feel for not giving more of themselves to those they care about.
+## Romantic Relationships
+Mediators (INFPs) are dreamers and idealists, especially when it comes to romance. 
+The concept of true love resonates with them, and they’re unlikely to be happy in a relationship that is founded on anything less. 
+People with this personality type may find themselves daydreaming about the perfect relationship, 
+imagining how it would feel to share their innermost selves with another person.
+
+Most Mediators don’t just want to find a partner – they want to connect with a soul mate. This idealism is among their most endearing traits. 
+It’s what enables Mediators to look past superficial appearances and remember what really matters – in love and in life.
+
+That said, Mediator personalities need to make sure that they see their partners as they are – not as they want them to be. 
+After all, no partner is perfect, and even the most beautiful of relationships has its challenges. 
+With time, many Mediators come to learn that true love doesn’t just magically happen – it takes compromise, understanding, and effort.
+
+## Hopelessly  Devoted
+When they meet someone new, most Mediators can’t help but compare that person with the ideal soul mate they’ve imagined in the past. 
+Unsurprisingly, this comparison tends to weed out more than a few potential partners. 
+Not everyone can match Mediators’ standards for morality and authenticity, and their idealized expectations might not be realistic. 
+As a result, single Mediators may sometimes worry that they’ll never find anyone who is a match for them.
+
+When they do find a kindred spirit, Mediators show themselves to be passionate, hopeless romantics. 
+At the same time, they still respect their partner’s independence. 
+Mediator personalities use their compassion and insight to understand the people they care about, 
+and they use their creativity to make their partner feel special.
+
+`ediators share a sincere belief that two people can come together in a relationship and make each other better and happier than they were before.`
+
+Most Mediators aim to accept their partners as they are. That said, these personalities also want to help their partners learn, grow, and pursue their goals. 
+Mediators are always dreaming up ways to improve themselves and the world around them. The last thing they’d want is for their partners to feel unhappy or stuck.
+
+As a result, many people with this personality type dedicate themselves to helping their partners improve their lives. 
+Although this is a noble goal, Mediators may need to be careful not to lose sight of their own needs and priorities. 
+They might also need to make sure that their partners are really ready to change. 
+As long as they do so, Mediators’ support and devotion can make all the difference in their partners’ lives.
+
+## Finding What’s Real
+Mediators tend to avoid conflict whenever possible. This can help make their relationships stable, 
+but it can also compromise the authenticity of their connection with their partners. 
+These personalities may try to make their partners happy at all costs, sacrificing their own needs and preferences.
+
+Mediators can also have a tendency to mentally fixate on problems in their relationships rather than discuss them openly. 
+Because they don’t want to trigger a conflict, they may find it difficult to talk about what’s wrong and why. 
+This can cause significant issues in their relationships. After all, their partners can’t read their minds.
+
+People with this personality type may need to remind themselves that open, honest communication is necessary in a relationship, 
+even if it isn’t always easy. These moments of candor can transform a relationship for the better.
+
+As long as they communicate openly, Mediators are more than capable of staying true to themselves in a relationship – 
+and encouraging the person they love to do the same. By bringing their whole hearts and minds to their relationships, 
+Mediators can find out what it truly means to love and be loved.
+
+## Career Paths
+Many Mediators (INFPs) long for a career that doesn’t just take care of the bills but also feels fulfilling. 
+They want to spend their days doing something they genuinely love, preferably without too much stress or drama. 
+For these personalities, an ideal professional life should feel like a calling, not just a job.
+
+At times, idealistic Mediators might struggle to find a profession that meets their practical needs and fulfills their dreams. 
+They may drift in frustration, waiting for the perfect job to present itself and eventually feeling stuck or worried that they’re not living up to their potential. 
+Alas, there’s no such thing as a perfect job. The question of whether to settle for a less-than-ideal position can weigh heavily on people with this personality type.
+
+Fortunately, Mediators stand out for their creativity, independence, and sincere desire to connect with and help others. 
+These traits can help them shine – and find fulfillment – in nearly any line of work.
+
+## There’s a Place for Everyone
+Mediators can succeed nearly anywhere, but certain fields seem to be especially attractive to these personalities. 
+With their curiosity and their love of self-expression, many Mediators dream of becoming writers. 
+They might write novels, seek out interesting freelance niches, or even find themselves doing communications in a corporate field or for a nonprofit organization. 
+Richly imaginative, Mediators can infuse even the driest of fundraising or marketing materials with new life.
+
+`Nearly any field can benefit from Mediators’ artful communication style. As a result, Mediators may have their pick of jobs 
+when choosing whether to work in the nonprofit or for-profit sphere – or for themselves.`
+
+Although these personalities aren’t known for seeking the spotlight, they may find their life’s purpose in the performing arts. 
+Mediators are sensitive to artistic beauty, and some of them simply come to life in the worlds of music, drama, or dance. 
+These Mediators can draw from their inner depths to pull out exquisite interpretations of a creator’s work. 
+Many Mediators also create their own works as playwrights, composers, and choreographers.
+
+Whatever they do, people with this personality type want to feel that their work is helping others. 
+As a result, some Mediators find it gratifying to work with clients face-to-face.
+Service careers, such as massage therapy, physical rehabilitation, counseling, social work, psychology, 
+and even teaching can be exceptionally rewarding for Mediators, who take pride in the progress and growth that they help foster.
+
+People with this personality type tend to put others’ interests ahead of their own. This is a mixed blessing, 
+as it can make it hard for them to establish a healthy work-life balance. 
+That said, few things are more rewarding for Mediators than seeing their work help change someone’s life for the better.
+
+## Finding Their Way
+Mediators may find it demotivating to work in high-stress, bureaucratic, or hectic environments. 
+They may also become frustrated by workplaces that are highly critical or competitive. 
+Workplaces that reward independence tend to be a good fit for Mediators, 
+although they may appreciate some structure and oversight to help them avoid procrastination and getting lost in thought.
+
+That said, Mediators don’t need ideal conditions to thrive professionally. These personalities want to live in tune with their values, 
+in their careers as much as in any other aspect of their lives. As long as they feel a strong sense of mission in their work, 
+they can put up with – and overcome – any number of challenges.
+## Conclusion
+Few personality types are as poetic and kindhearted as Mediators (INFPs). 
+Their altruism and vivid imagination allow them to overcome many challenging obstacles – and more often than not, 
+they brighten the lives of those around them in the process. Mediators’ creativity is invaluable in many areas, including their own personal growth.
+
+Yet Mediators can be tripped up in areas where idealism and altruism are more of a liability than an asset. 
+When it comes to finding (or keeping) a partner, making friends, pursuing a meaningful career, 
+or planning for the future, people with this personality type may need to consciously develop their weaker traits and gain new skills.
+
+What you have read so far is just an introduction into the complexity of the Mediator personality type. 
+You may have muttered to yourself, “Wow, this is so accurate, it’s a little creepy,” or “Finally, someone understands me!” 
+You may have even asked, “How do they know more about me than the people I’m closest to do?”
+
+This is not a trick. You felt understood because you were. We’ve studied how Mediators think and what they need to reach their full potential. 
+In the process, we’ve learned how people with your personality type can overcome even their greatest personal challenges.
+
+But to overcome these challenges, you need to have a plan, a personal road map – a vision for where you want to head and why. 
+In this introduction, you’ve learned how Mediators tend to behave in certain circumstances and what their key strengths and weaknesses are. 
+Now it’s time to go much deeper into your personality type and answer, “Why?” “How?” and “What if?”
+
+This knowledge is only the beginning of a lifelong journey. Are you ready to learn why Mediators like you act in the ways they do? 
+What motivates and inspires you? What you are afraid of and what you secretly dream about? How you can unlock your true potential?
+
