@@ -179,3 +179,21 @@ Now it’s time to go much deeper into your personality type and answer, “Why?
 This knowledge is only the beginning of a lifelong journey. Are you ready to learn why Mediators like you act in the ways they do? 
 What motivates and inspires you? What you are afraid of and what you secretly dream about? How you can unlock your true potential?
 
+
+是我而当者，吾师也，非我而当者，吾友也。 
+
+优点：知道认错，缺点，死活不改。 
+
+Kiss and  kick批评人有学问。 
+
+不够细心，出错率很高，太急躁，急于求成。 
+
+问题搞的太复杂，两面性，不易沟通，可读性太差。 
+
+联想高管：你们先活够三十年再来评价联想。 
+
+太容易激动，听不进别人的劝告，坚持自我批判和让别人帮助批判的华为，借助外界咨询公司的力量。 
+
+如何避免犯错，避免低级错误，避免方向错误，避免战略错误。 
+
+Prethinking double checking regularity 
