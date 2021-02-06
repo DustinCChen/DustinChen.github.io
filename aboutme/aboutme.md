@@ -2,7 +2,7 @@
 
 一句话概括INFP：情绪深刻、敏感而又“迟钝”、理想主义、洞察力、三分钟热度、拖延症、抑郁倾向、同理心、利他主义、追求自我理解。
 
-![https://github.com/nicolas-chan/nicolas-chan.github.io/blob/main/supplement/INFP.png?raw=true]
+[https://github.com/nicolas-chan/nicolas-chan.github.io/blob/main/supplement/INFP.png?raw=true]
 
 ## “调停者” 人格
 调停者人格类型的人是真正的理想主义者，他们总是从最坏的人和事中寻找最好的一面，想方设法让情况变得更好。 
