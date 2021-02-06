@@ -178,4 +178,18 @@ Now it’s time to go much deeper into your personality type and answer, “Why?
 This knowledge is only the beginning of a lifelong journey. Are you ready to learn why Mediators like you act in the ways they do? 
 What motivates and inspires you? What you are afraid of and what you secretly dream about? How you can unlock your true potential?
 
+# 认识自己
+霍兰德职业兴趣测试
+
+MBTI职业性格测试
+
+DISC性格测试--帮你发现真正的你自己
+
+普鲁斯特问卷
+
+九型人格测试
+
+抑郁自评量表
+
+
 
