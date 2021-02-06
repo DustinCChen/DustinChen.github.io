@@ -3190,5 +3190,1472 @@ static_cast, dynamic_cast，C风格强制转换，回答不够好
 
  # CPP 
  
+  
+
+C/C++面试题 
+
+ 
+
+1、算法和数据结构 
+
+minheap / maxheap 实用场景及实现细节 
+
+2、Vector使用 (可能有什么问题) 
+
+struct Person { 
+
+std::string name; 
+
+int age; 
+
+Person(const char* name, int age); 
+
+}; 
+
+std::vector<Person> personArray; 
+
+personArray.push_back(Person("xiaoming", 12)); 
+
+Person* me = &(*personArray.end()); 
+
+std::string namePrefix("tmp-"); 
+
+for(int i=0; i<1024; ++i) { 
+
+std::string name(namePrefix); name.append(i); 
+
+personArray.push_back(Person(name.c_str(), i)); 
+
+} 
+
+printf("my name is %s\n", me->name.c_str()); 
+
+3、试描述实际项目中用到虚函数思想的实例 
+
+实际编程中，虚函数可以带来什么好处 
+
+4、HTTP协议中，如何判断消息体的长度 
+
+5、DDOS攻击的原理 
+
+ 
+
+ 
+
+ 
+
+    关注 
+
+    分享 
+
+ 
+
+    智能云平台 智能云平台 首页 招聘  
+
+ 
+
+C/C++面试题 
+
+转至元数据结尾 
+
+ 
+
+    由 zhuxiaokun 创建于2017-09-04 
+
+ 
+
+转至元数据起始 
+
+ 
+
+  
+
+1．C++ 
+
+1)       什么是多态，C++是如何实现多态的。 
+
+2)       基类A定义了一个方法F，派生类B重载F。如果在A的构造函数中调用F，调用的是哪个类的函数。 
+
+3)       STL中vector和list的区别，分别在什么场景下使用。 
+
+4)       遍历一个整形的vector，删除其中的的偶数，如何避免迭代器失效。 
+
+5)       在析构函数中能不能抛出异常。 
+
+2．     网络和操作系  统 
+
+1)       进程和线程的区别。 
+
+2)       linux下线程同步都有哪些工具。 
+
+3)       死锁是如何产生的，怎样避免死锁。 
+
+4)       TCP和UDP的区别。 
+
+5)       TCP建立连接的三次握手过程和断开连接的四次握手过程，TIMEWAIT 2MXL作用。 
+
+6)       epoll的两种触发方式和区别。 
+
+3．算法和数据结构 
+
+1)       快速排序的时间复杂度，简单描述执行过程。 
+
+2)       stl的map是如何实现的，红黑树的设计思想。 
+
+4．现场程序题 
+
+1） n张乱序的扑克牌（每张可以用1到13的数值表示），输出其中最长的顺子（数值连续的扑克牌）。n可能很大，即这是从很多副扑克牌中随机抽取的。要求：算法的时间复杂度尽可能低。 
+
+ 
+
+2） n个人排队，每4人一队（如果是5个人的话，多出来的一个人单独站一队）。要求定义一个宏，参数为n，计算n个人排几队。限制：只能使用最基本的四则运算或者位移，不能使用if else或者?运算符，也不能使用关系运算符。 
+
+ 
+
+3） 实现图的非递归深度优先算法。 
+
+ 
+
+ 
+
+校招 Golang 面试题 
+
+ 
+
+语言特性： 
+
+0. slice vs array 
+
+ 
+
+Go's arrays are values. An array variable denotes the entire array; it is not a pointer to the first array element (as would be the case in C). This means that when you assign or pass around an array value you will make a copy of its contents. (To avoid the copy you could pass a pointer to the array, but then that's a pointer to an array, not an array.) One way to think about arrays is as a sort of struct but with indexed rather than named fields: a fixed-size composite value. 
+
+ 
+
+A slice can be created with the built-in function called make, which has the signature, 
+
+ 
+
+func make([]T, len, cap) []T 
+
+ 
+
+Slices hold references to an underlying array, and if you assign one slice to another, both refer to the same array. If a function takes a slice argument, changes it makes to the elements of the slice will be visible to the caller, analogous to passing a pointer to the underlying array.  
+
+ 
+
+Slicing is done by specifying a half-open range with two indices separated by a colon. For example, the expression b[1:4] creates a slice including elements 1 through 3 of b (the indices of the resulting slice will be 0 through 2). 
+
+ 
+
+切片在append的时候如果有额外的容量可用，append将可用的元素合并到切片的长度，然后对他进行赋值，如果没有可用的容量，append会创建新的底层数组，将现有的值复制到新的数组里再追加新的值。 
+
+ 
+
+As mentioned earlier, re-slicing a slice doesn't make a copy of the underlying array. The full array will be kept in memory until it is no longer referenced. Occasionally this can cause the program to hold all the data in memory when only a small piece of it is needed. 
+
+ 
+
+To fix this problem one can copy the interesting data to a new slice before returning it: 
+
+ 
+
+func CopyDigits(filename string) []byte { 
+
+    b, _ := ioutil.ReadFile(filename) 
+
+    b = digitRegexp.Find(b) 
+
+    c := make([]byte, len(b)) 
+
+    copy(c, b) 
+
+    return c 
+
+} 
+
+ 
+
+A more concise version of this function could be constructed by using append. This is left as an exercise for the reader. 
+
+ 
+
+1. defer 
+
+ 
+
+多个 defer LIFO 的执行顺序； 
+
+ 
+
+package main 
+
+import ( 
+
+"fmt" 
+
+) 
+
+func main() { 
+
+defer_call() 
+
+} 
+
+func defer_call() { 
+
+defer func() { fmt.Println("打印前") }() 
+
+defer func() { fmt.Println("打印中") }() 
+
+defer func() { fmt.Println("打印后") }() 
+
+panic("触发异常") 
+
+} 
+
+output: 
+
+打印后 
+
+打印中 
+
+打印前 
+
+panic: 触发异常 
+
+ 
+
+有对返回值进行修改的能力，虽然代码位置在 return 之前： 
+
+ 
+
+package main 
+
+import ( 
+
+"fmt" 
+
+) 
+
+func main() { 
+
+fmt.Println(doubleScore(0))    //0 
+
+fmt.Println(doubleScore(20.0)) //40 
+
+fmt.Println(doubleScore(50.0)) //50 
+
+} 
+
+func doubleScore(source float32) (score float32) { 
+
+defer func() { 
+
+if score < 1 || score >= 100 { 
+
+//将影响返回值 
+
+score = source 
+
+} 
+
+}() 
+
+//score = source * 2 
+
+//return 
+
+//或者 
+
+return source * 2 
+
+} 
+
+ 
+
+defer 使用场景：资源释放，比如：关闭文件，释放互斥锁； 
+
+ 
+
+2. channel 
+
+ 
+
+Like maps, channels are allocated with make, and the resulting value acts as a reference to an underlying data structure. If an optional integer parameter is provided, it sets the buffer size for the channel. The default is zero, for an unbuffered or synchronous channel. 
+
+ 
+
+ci := make(chan int)            // unbuffered channel of integers 
+
+cj := make(chan int, 0)         // unbuffered channel of integers 
+
+cs := make(chan *os.File, 100)  // buffered channel of pointers to Files 
+
+ 
+
+阻塞特性； 
+
+ 
+
+c := make(chan int)  // Allocate a channel. 
+
+// Start the sort in a goroutine; when it completes, signal on the channel. 
+
+go func() { 
+
+    list.Sort() 
+
+    c <- 1  // Send a signal; value does not matter. 
+
+}() 
+
+doSomethingForAWhile() 
+
+<-c   // Wait for sort to finish; discard sent value. 
+
+ 
+
+Receivers always block until there is data to receive. If the channel is unbuffered, the sender blocks until the receiver has received the value. If the channel has a buffer, the sender blocks only until the value has been copied to the buffer; if the buffer is full, this means waiting until some receiver has retrieved a value. 
+
+ 
+
+常见问题及使用 tips： 
+
+sample1 close twice： 
+
+ 
+
+ch := make(chan bool) 
+
+close(ch) 
+
+close(ch)  // 这样会panic的，channel不能close两次 
+
+ 
+
+sample2 读取的时候channel提前关闭了 
+
+ 
+
+ch := make(chan string) 
+
+close(ch) 
+
+i := <- ch // 不会panic, i读取到的值是空 "",  如果channel是bool的，那么读取到的是false 
+
+ 
+
+sample3 向已经关闭的channel写数据http://play.golang.org/p/vl5d5tkfl7 
+
+ 
+
+ch := make(chan string) 
+
+close(ch) 
+
+ch <- "good" // 会panic的 
+
+ 
+
+tip 1: 判断channel是否close 
+
+ 
+
+i, ok := <- ch 
+
+if ok { 
+
+    println(i) 
+
+} else { 
+
+    println("channel closed") 
+
+} 
+
+ 
+
+tip 2: for循环读取channel 
+
+ 
+
+for i := range ch { // ch关闭时，for循环会自动结束 
+
+    println(i) 
+
+} 
+
+ 
+
+tip 3:防止读取超时 
+
+ 
+
+select { 
+
+    case <- time.After(time.Second*2): 
+
+        println("read channel timeout") 
+
+    case i := <- ch: 
+
+        println(i) 
+
+} 
+
+ 
+
+3. interface 
+
+面向对象的组合概念： 
+
+ 
+
+type People struct{} 
+
+ 
+
+func (p *People) ShowA() { 
+
+fmt.Println("showA") 
+
+p.ShowB() 
+
+} 
+
+func (p *People) ShowB() { 
+
+fmt.Println("showB") 
+
+} 
+
+ 
+
+type Teacher struct { 
+
+People 
+
+} 
+
+ 
+
+func (t *Teacher) ShowB() { 
+
+fmt.Println("teacher showB") 
+
+} 
+
+ 
+
+func main() { 
+
+t := Teacher{} 
+
+t.ShowA() 
+
+} 
+
+ 
+
+Go中没有继承！ 没有继承！没有继承！是叫组合！组合！组合！ 
+
+这里People是匿名组合People。被组合的类型People所包含的方法虽然升级成了外部类型Teacher这个组合类型的方法，但他们的方法(ShowA())调用时接受者并没有发生变化。 
+
+这里仍然是People。毕竟这个People类型并不知道自己会被什么类型组合，当然也就无法调用方法时去使用未知的组合者Teacher类型的功能。 
+
+因此这里执行t.ShowA()时，在执行ShowB()时该函数的接受者是People，而非Teacher 
+
+ 
+
+类型校验： 
+
+A type assertion takes an interface value and extracts from it a value of the specified explicit type. The syntax borrows from the clause opening a type switch, but with an explicit type rather than the type keyword: 
+
+ 
+
+value.(typeName) 
+
+ 
+
+But if it turns out that the value does not contain a string, the program will crash with a run-time error. To guard against that, use the "comma, ok" idiom to test, safely, whether the value is a string: 
+
+ 
+
+str, ok := value.(string) 
+
+if ok { 
+
+    fmt.Printf("string value is: %q\n", str) 
+
+} else { 
+
+    fmt.Printf("value is not a string\n") 
+
+} 
+
+ 
+
+（反射） 
+
+ 
+
+4. 同步（mutex 和 waitGroup） 
+
+type Mutex 
+
+    func (m *Mutex) Lock() 
+
+    func (m *Mutex) Unlock() 
+
+ 
+
+type RWMutex 
+
+    func (rw *RWMutex) Lock()  
+
+    func (rw *RWMutex) RLock() 
+
+    func (rw *RWMutex) RLocker() Locker 
+
+    func (rw *RWMutex) RUnlock() 
+
+    func (rw *RWMutex) Unlock() 
+
+ 
+
+type WaitGroup 
+
+    func (wg *WaitGroup) Add(delta int) 
+
+    func (wg *WaitGroup) Done() 
+
+    func (wg *WaitGroup) Wait() 
+
+ 
+
+5. goroutine 
+
+语法： go func() 
+
+场景： 轻量级高并发，配合 channel 完成通信； 
+
+底层实现：GPM 模型，http://tonybai.com/2017/06/23/an-intro-about-goroutine-scheduler/ 
+
+ 
+
+ 
+
+开放性问题： 
+
+1. 并发和并行 
+
+ 
+
+2. golang 和其他语言对比 
+
+ 
+
+ 
+
+编程题： 
+
+1. Maximum Subarray 
+
+https://leetcode.com/problems/maximum-subarray/description/ 
+
+Find the contiguous subarray within an array (containing at least one number) which has the largest sum. 
+
+ 
+
+For example, given the array [-2,1,-3,4,-1,2,1,-5,4], 
+
+the contiguous subarray [4,-1,2,1] has the largest sum = 6. 
+
+ 
+
+More practice: 
+
+If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle. 
+
+ 
+
+2. golang 实现 单例 
+
+ 
+
+A1-1 : 暴力锁 
+
+func Instance(name string) *Singleton { 
+
+_self.Mutex.Lock() 
+
+defer _self.Mutex.Unlock() 
+
+if _self.Name == "" { 
+
+return NewInstance(name) 
+
+} 
+
+return _self 
+
+} 
+
+ 
+
+简单粗暴的加锁，可以发现能够解决并发多次创建的问题。但是如此一来，整个创建流程就变成串行调用了。比如有1000次创建请求，只要创建一个实例就好，剩下999次完全没有必要加锁，直接将之前第一个创建的实例返回就好。而这样的写法会导致每一次都是带锁访问，影响速度。 
+
+ 
+
+A1-2: 接着上面的思路，我们可以不为这个函数整体加锁，在创建的时候加锁即可。 
+
+ 
+
+func Instance(name string) *Singleton { 
+
+if _self.Name == "" { 
+
+_self.Mutex.Lock() 
+
+defer _self.Mutex.Unlock() 
+
+return NewInstance(name) 
+
+} 
+
+return _self 
+
+} 
+
+ 
+
+虽然已经加上了锁，但是可以看到，依然创建了两次对象。如果两个并行的创建调用，此时if _self.Name == ""这个调用也同时执行，自然也都是true，接着，虽然有锁，但是也就是串行得去创建对象，外面的if在无锁的情况是失效了。 
+
+ 
+
+A1-3: 这时就需要 Double Check了，在锁里面再加一次判空检查。 
+
+ 
+
+func Instance(name string) *Singleton { 
+
+if _self.Name == "" { 
+
+_self.Mutex.Lock() 
+
+defer _self.Mutex.Unlock() 
+
+if _self.Name == "" { 
+
+return NewInstance(name) 
+
+} 
+
+} 
+
+return _self 
+
+} 
+
+ 
+
+ 
+
+A2 : sync.Once 
+
+package main 
+
+ 
+
+import ( 
+
+"fmt" 
+
+"sync" 
+
+) 
+
+ 
+
+type singleton struct { 
+
+Name string 
+
+} 
+
+ 
+
+var instance *singleton 
+
+var once sync.Once 
+
+ 
+
+func GetInstance(caller string) *singleton { 
+
+once.Do(func() { 
+
+instance = &singleton{Name: caller} 
+
+}) 
+
+return instance 
+
+} 
+
+ 
+
+func main() { 
+
+s := GetInstance("hello") 
+
+fmt.Println(s.Name) 
+
+s = GetInstance("world") 
+
+fmt.Println(s.Name) 
+
+ 
+
+} 
+
+ 
+
+3. Simple Golang Retry Function 
+
+https://upgear.io/blog/simple-golang-retry-function/ 
+
+ 
+
+type stop struct { 
+
+error 
+
+} 
+
+// DeleteThing attempts to delete a thing. It will try a maximum of three times. 
+
+func DeleteThing(id string) error { 
+
+// Build the request 
+
+req, err := http.NewRequest( 
+
+"DELETE", 
+
+fmt.Sprintf("https://unreliable-api/things/%s", id), 
+
+nil, 
+
+) 
+
+if err != nil { 
+
+return fmt.Errorf("unable to make request: %s", err) 
+
+} 
+
+ 
+
+// Execute the request 
+
+return retry(3, time.Second, func() error { 
+
+resp, err := http.DefaultClient.Do(req) 
+
+if err != nil { 
+
+// This error will result in a retry 
+
+return err 
+
+} 
+
+defer resp.Body.Close() 
+
+ 
+
+s := resp.StatusCode 
+
+switch { 
+
+case s >= 500: 
+
+// Retry 
+
+return fmt.Errorf("server error: %v", s) 
+
+case s >= 400: 
+
+// Don't retry, it was client's fault 
+
+return stop{fmt.Errorf("client error: %v", s)} 
+
+default: 
+
+// Happy 
+
+return nil 
+
+} 
+
+}) 
+
+} 
+
+ 
+
+v1: 
+
+func retry(attempts int, sleep time.Duration, fn func() error) error { 
+
+if err := fn(); err != nil { 
+
+if s, ok := err.(stop); ok { 
+
+// Return the original error for later checking 
+
+return s.error 
+
+} 
+
+  
+
+if attempts--; attempts > 0 { 
+
+time.Sleep(sleep) 
+
+return retry(attempts, 2*sleep, fn) 
+
+} 
+
+return err 
+
+} 
+
+return nil 
+
+} 
+
+ 
+
+v2:  
+
+func init() { 
+
+rand.Seed(time.Now().UnixNano()) 
+
+} 
+
+ 
+
+func retry(attempts int, sleep time.Duration, f func() error) error { 
+
+if err := f(); err != nil { 
+
+if s, ok := err.(stop); ok { 
+
+// Return the original error for later checking 
+
+return s.error 
+
+} 
+
+ 
+
+if attempts--; attempts > 0 { 
+
+// Add some randomness to prevent creating a Thundering Herd 
+
+jitter := time.Duration(rand.Int63n(int64(sleep))) 
+
+sleep = sleep + jitter/2 
+
+ 
+
+time.Sleep(sleep) 
+
+return retry(attempts, 2*sleep, f) 
+
+} 
+
+return err 
+
+} 
+
+ 
+
+return nil 
+
+} 
+
+ 
+
+4. 开放设计 
+
+func GetGoodURLs(urls []URL, mustFinishIn time.Duration) []URL {} 
+
+返回若干 url 中可以在给定时间内正常访问的集合 
+
+（考察点，goroutine, timeout, select 并发控制，线程安全） 
+
+ 
+
+ 
+
+JAVA笔试题目 
+
+1.Java基本的数据类型都有什么？String是基本的数据类型么？ 
+
+2.int和Integer有什么区别？ 
+
+3.String、StringBuffer与StringBuilder的区别？ 
+
+ 
+
+4.JDK7以上，switch能传什么类型的参数？byte？long？String？ 
+
+5.重载（Overload）和重写（Override）的区别 
+
+6.抽象类和接口有何区别？为何要面向接口编程？ 
+
+7.接口是否可以继承接口？接口是否可以继承多个接口？抽象类是否可以实现接口？ 
+
+8.java中的final关键字有哪些用法？ 
+
+9.Error和Exception有什么区别？ 
+
+10.try{}里面有个return语句，那么紧跟在这个try后的finally{}里面的代码会不会执行？什么时候被执行？是return前还是后？ 
+
+11.说说对throws，throw分别如何使用 
+
+12.List，Set，Map的区别 
+
+13.static关键字怎么用？ 
+
+ 
+
+ 
+
+14、将一下大学数据结构学到的算法？说一下冒泡排序、快速排序、二分查找（折半查找）、插入排序等排序的原理？比较这几种算法的复杂度和稳定性？ 
+
+ 
+
+参考：https://blog.csdn.net/hguisu/article/details/7776068 
+
+ 
+
+（1）冒泡算法： 
+
+ 
+
+    比较相邻的元素。如果第一个比第二个大，就交换他们两个。 
+
+    对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。 
+
+    针对所有的元素重复以上的步骤，除了最后一个。 
+
+    持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。 
+
+ 
+
+    冒泡排序的时间复杂度：O（n2） ---n的平方 
+
+    冒泡排序的空间复杂度：O（1） 
+
+    是否是稳定算法：是 
+
+ 
+
+（2）快速排序：设要排序的数组是A[0]……A[N-1]，首先任意选取一个数据（通常选用数组的第一个数）作为关键数据，然后将所有比它小的数都放到它前面，所有比它大的数都放到它后面，这个过程称为一趟快速排序。迭代执行直至完成 
+
+ 
+
+快速排序的时间复杂度：O（n2）  ---n的平方 
+
+快速排序的空间复杂度：O（log 2 N）~O(log n) 
+
+ 
+
+是否是稳定算法：否 
+
+ 
+
+（3）快速排序：给一个数，要求查找出来，前提这个数组是一个升序的数组，取数组的中间值，与此数比较，若相等，则返回这个数，若找的数比中间数小，则在中间数的左侧中再找，放在再右侧找，知道找到为止 
+
+二分查找的时间复杂度：O（nlog n）  
+
+快速排序的空间复杂度：O（1） 
+
+是否是稳定算法：否 
+
+（4）插入排序：每步将一个待排序的纪录，按其关键码值的大小插入前面已经排序的文件中适当位置上，直到全部插入完为 
+
+ 
+
+插入排序的时间复杂度：O（n 2）  
+
+插入排序的空间复杂度：O（1） 
+
+是否是稳定算法：是 
+
+15、二叉树遍历算法有几种？介绍一下深度优先遍历与广度优先遍历？ 
+
+ 参考：https://www.cnblogs.com/zhangbaochong/p/5492877.html 
+
+ 深度优先搜索(Depth First Search)是沿着树的深度遍历树的节点，尽可能深的搜索树的分支。以上面二叉树为例，深度优先搜索的顺序为：ABDECFG。怎么实现这个顺序呢 ？深度优先搜索二叉树是先访问根结点，然后遍历左子树接着是遍历右子树，因此我们可以利用堆栈的先进后出的特点，现将右子树压栈，再将左子树压栈，这样左子树就位于栈顶，可以保证结点的左子树先与右子树被遍历。 
+
+广度优先搜索(Breadth First Search),又叫宽度优先搜索或横向优先搜索，是从根结点开始沿着树的宽度搜索遍历，上面二叉树的遍历顺序为：ABCDEFG.可以利用队列实现广度优先搜索。 
+
+ 
+
+1.简单说一说drop、delete与truncate的区别？分别在什么场景之下使用? 
+
+ 
+
+2.什么是数据库索引？ 
+
+ 
+
+3.什么是数据库的事务? 
+
+4.如果给一些数字，要对这些数字进行有小到大的排序并且排重，准备如何实现这个程序？ 
+
+5.什么是单例？ 
+
+6.给定一个map，如何对这个map进行由小到大的排序？ 
+
+7.equals与==的区别 
+
+8.编写多线程程序有几种实现方式？ 
+
+9.HashMap和Hashtable有什么区别？ 
+
+10.同步和异步有何异同，在什么情况下分别使用他们 
+
+ 
+
+ 
+
+ 
+
+供应链部门面试题目： 
+
+核心能力 
+
+    商业分析师：分析能力、Logic & Critical Thinking、定义问题和目标、过往经历所产出业务价值 
+
+    算法工程师：数理基础 
+
+    数据挖掘工程师：工程能力，架构思维 
+
+面试流程 
+
+    一面和二面主要考察基本功，根据候选人的教育背景和简历中描述的技能选择题目。【回答干脆利落，不知道就是不知道，加分，否则，减分】 
+
+    二面和三面可以开始问项目经历了，要解决的问题是什么，解决方案是什么，为什么这么设计，效果怎么评价。【重点考察沟通能力，能不能把事讲清楚，如果这方面还行，就追着问细节，提问题，如果能从容应对，基本上就可以下一轮了】 
+
+    如果简历中的项目经历和我们的工作没有任何契合点，拋具体问题让候选人设计解决方案（如何做销量预测，如何在库存管理中应对促销带来的销量波动）。 
+
+ 
+
+面试题 
+
+业务分析 
+
+ 
+
+    假如我们正在准备一个“洗发护发”品类的分析报告，汇报对象是该品类的负责人（总体负责该品类的销售、采购、品类规划等，核心KPI是成交额和净利），你会准备哪些分析，如何组织你的分析？ 
+
+    如何估计未来一年的GMV，给出估计框架。 
+
+    某个品类的销售额增长率由正转负，要分析其原因，给出分析思路。 
+
+ 
+
+SQL/R/Python/Spark 
+
+概率&逻辑 
+
+ 
+
+    假如草地上有一群兔子，数量无穷多，但是体重不相同。我们从中选出10只兔子，记其中的最重的兔子的重量为A, 然后再从剩余的兔子中选出20只，记其中的最重的兔子的重量为B, 问A大于B的概率是多少？（1/3） 
+
+    一列火车首尾相接，每列火车里有一个灯泡和一个控制相应灯泡的开关，如何数出一共有多少节车厢。 
+
+ 
+
+统计 
+
+ 
+
+    描述OLS（Ordinary Least Squares）的应用场景、计算流程。【一个完整的回答应该从Regression开始讲起，参数估计用到OLS，如果能推导出Hat Matrix，加分】 
+
+    描述什么是假设检验（Hypothesis Testing），Type I Error和Type II Error分别是什么？【完整描述H0，H1，Rejection Region，如果能回答出构造Test Statistic的方法（例如LRT），加分】 
+
+    x_1, x_2, ..., x_n来自uniform(0, \theta)，\theta的极大似然估计是什么？【答案是x_{(n)}，这个不难猜出来，如果能在MLE的框架下解释为什么是x_{(n)}，加分】 
+
+    描述什么是二项分布，二项分布的均值和方差分别是？【统计专业候选人送走题】 
+
+    什么是无偏估计，MSE是什么？【统计专业候选人送走题】 
+
+    最常用的衡量相关性的统计指标是什么？【pearson correlation coefficient, rank correlation coefficient】pcc的计算公式？局限性？【population version或者sample version的公式都可以，局限性如果答不上来减分】pcc的置信区间怎么计算？【如果能回答出Bootstrap Method，加分】 
+
+ 
+
+机器学习 
+
+ 
+
+    监督学习模型可以分为生成模型（generative model）和判别模型（discriminative model）两类，以下哪些模型是生成模型：SVM，Naïve Bayes，Neural Networks，Logistic Regression 。【机器学习背景送走题】 
+
+    描述Cross Validation的大致流程。【机器学习背景送走题】 
+
+    完整描述Logistic Regression。【一个完整的描述应该包括Problem Definition，Definition of the Likelihood Function (Loss Function)，Optimization Methods】Logistic Regression的优化目标是凸函数吗？ 
+
+    描述k-means算法的大致流程？【一个完整的描述应该包括目标函数的定义和算法步骤（初始化、迭代、终止条件）】是否知道如何确定k？使用时要注意什么？ 
+
+    有哪些聚类算法？ 
+
+ 
+
+ 
+
+岗位要求： 
+
+ 
+
+1、本科及以上学历，计算机、数学相关专业，2年以上相关工作经验 
+
+ 
+
+2、Java基础扎实，熟悉常见J2EE开发框架，有良好的编码习惯 
+
+ 
+
+3、熟悉常用数据存储技术，如Redis/MongoDB/MySQL/ElasticSearch等 
+
+ 
+
+4、至少熟悉大数据体系内一种技术组件（如HDFS/Hive/HBase/Spark/Kafka/MapReduce等），并有相应的应用经验 
+
+ 
+
+5、有主人翁精神，善于沟通，有良好的团队合作精神，能承受高压工作 
+
+ 
+
+6、对新技术有强烈的求知欲望，有良好的学习和理解能力 
+
+ 
+
+7、有大型互联网公司、电商企业相关工作经验者优先 
+
+ 
+
+8、熟悉常用算法、数据结构优先 
+
+ 
+
+  
+
+ 
+
+常用面试题： 
+
+ 
+
+机器学习算法： 
+
+1.Q：熟悉哪些机器学习算法？ 
+
+A：分类：决策树、朴素贝叶斯、SVM、KNN、逻辑回归、 
+
+      聚类：k-means 
+
+      关联：FP、Aprior 
+
+ 
+
+2.Q: 什么过拟合，如何解决？ 
+
+A：在训练集上表现很好，在测试集上表现不好。一般加入惩罚项，降低模型复杂度。 
+
+ 
+
+3.Q：朴素贝叶斯为何是“朴素”的，实现过程的问题？ 
+
+A：“朴素”是指特征之间相互独立，实际情况很难做到。问题一：多项0到1之间的数相乘，越乘越小，可能导致溢出。一般采用取对数求和来解决。 
+
+问题二：多项概率相乘时，某一项为0导致整体为0，一般在分子分母同时加一个常数 
+
+ 
+
+4.Q：逻辑回归的基本原理？ 
+
+ 
+
+hive面试题 
+
+ 
+
+1.通过 SQL，如何在表 Persons 中选择 FirstName 等于 Thomas 而 LastName 等于 Carter 的所有记录？     答案: C 
+
+ 
+
+A .SELECT * FROM Persons WHERE FirstName LIKE 'Thomas' AND LastName LIKE 'Carter' 
+
+ 
+
+B. SELECT FirstName='Thomas', LastName='Carter' FROM Persons 
+
+ 
+
+C. SELECT * FROM Persons WHERE FirstName='Thomas' AND LastName='Carter' 
+
+ 
+
+  
+
+ 
+
+2. 通过 SQL，您如何向 "Persons" 表中的 "LastName" 列插入 "Wilson" ？              答案    A 
+
+ 
+
+A. INSERT INTO Persons (LastName) VALUES ('Wilson') 
+
+B. INSERT ('Wilson') INTO Persons (LastName) 
+
+C. INSERT INTO Persons ('Wilson') INTO LastName 
+
+ 
+
+3. 以下sql，在hive中哪个能正确执行                    答案 D 
+
+ 
+
+A. 以上均不正确 
+
+B. select split('tmp(test)','\(')[0]   name from tmp.tmp_test 
+
+C. select split('tmp(test)','(')[0]   name from tmp.tmp_test 
+
+D. select split('tmp(test)','\\(')[0]   name from tmp.tmp_test 
+
+ 
+
+5、关于 hadoop map/reduce ,  请选择一个符合的选项        答案：C 
+
+ 
+
+ A:   reduce的数量必须大于零 
+
+ 
+
+ B:   reduce总是在所有map完成之后再执行 
+
+ 
+
+ C:   combiner 过程实际也是 reduce过程 
+
+ 
+
+ D:   Mapper的数量由输入的文件个数决定 
+
+ 
+
+  
+
+6. 关于hive sql，以下说法正确的是：           答案D 
+
+A . hive 列分隔符支持任意指定分隔符 
+
+B.  hive执行过程条件写在on 或者 where 中，效率一样 
+
+C. hive支持不等价连接 
+
+D. join 应将记录少的表/子查询放在Join操作符的左边 
+
+ 
+
+7. 关于hive sql 以下说法正确的是：               答案D 
+
+ 
+
+A. cluster by 不会对字段进行排序 
+
+ 
+
+B order by 只保证每个reducer的输出有序，不保证全局有序 
+
+ 
+
+C sort by 是全局有序 
+
+ 
+
+D distribute by 制定规则字段，将相同组数据分发到同一reducer 
+
+ 
+
+第一部分 Linux 
+
+ 
+
+1.将文件 nginx.conf 的权限改为 -rwxr-xr-- 
+
+ 
+
+2.找出 /etc 下，大于50K,所有者是 root 的文件，并将权限完整的列出 
+
+ 
+
+3.简述Hard Link 与 Symbolic Link 的区别 
+
+ 
+
+4.将 /home/root 目录下的 test.tar.gz 解压缩到 /data/www 
+
+ 
+
+5.判断 /tmp/abc 目录是否存在，若存在则在该目录下新建文件 myfile 
+
+ 
+
+6.写一段shell脚本关闭本机的mysql服务（提示:通过端口号和pid） 
+
+ 
+
+7. 如何把用户 sam 添加到用户组 docker? 
+
+ 
+
+8.如何查看本机放行的端口号？如何放行本机指定的端口号？ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+第三部分 自动化 
+
+ 
+
+1. selenium定位元素时，如何等待元素加载完成？有几种等待方式？ 
+
+ 
+
+2.如何跳过不想执行的自动化用例？如何指定测试用例执行的先后顺序? 
+
+ 
+
+3.页面刷新后如何重新定位元素？ 
+
+ 
+
+4.当页面跳转时如何比较两个页面的数据？ 
+
+ 
+
+5.测试用例中点击页面按钮时，报该按钮不可点击的错误，但单独调试点击该按钮却不报错。 
+
+ 
+
+出现这种情况可能的原因是什么，如何解决？ 
+
+ 
+
+6. XPATH 如何定位相对元素？ 
+
+ 
+
+7.  selenium1.0 和 selenium2.0 的主要区别是什么？selenium2.0的优点是什么？ 
+
+ 
+
+8. Jenkins 中，访问git仓库的凭证（credentials）如何配置，有几种配置方法？ 
+
+ 
+
+9. selenium 如何驱动远程浏览器启动？ 
+
+ 
+
+10. jenkins中的视图是什么意思？ 
+
+ 
+
+11. jenkins 如何配置自动触发构建 
+
+ 
+
+12. Selenium RC 和 WebDriver 的区别？ 
+
+第四部分 代码基础 
+
+ 
+
+1.git fetch 和 git pull 的区别是什么 
+
+2.git 如何修改最后一次提交的 message信息（提交说明）；如何让文件在工作目录中保存，但从版本控制中删除？ 
+
+ 
+
+3.对字符串 s = " Hello    World  " 做如下处理 
+
+（1）去除全部空格 
+
+（2）去除前后空格 
+
+（3）去除前后空格，并且中间只保留一个空格 
+
+4.python 如何抛出异常（Exception），如何捕获异常，异常处理机制和 java 有何不同？ 
+
+5.用两种方法输出斐波纳契数列（0，1，1，2，3 ...） 
+
+6.python 中，如何从 dictionary(字典) 中取一个随机元素 
+
+7. python中，if __name__ == '__main__'  判断语句的作用是什么，__name__ 变量代表什？ 
+
+ 
+
+8.如何序列化一个 python 对象，如何通过反序列化构造一个python对象？ java中又是如何实现序列化和反序列化？ 
+
+9.什么是 Lambda 表达式，用 Lambda 表达式的作用是什么？ 
+
+10. git 工作目录中的文件状态有几种，分别是什么？ 
+
+11. Maven 如何配置公司私服，如何配置镜像地址？ 
+
+ 
+
+12. java 中变量分为几类？primitive 型变量包含哪几种？ 
+
+13. python中的生成器（generator）和迭代器（iterator）是什么关系？ 
+
+14. 在当前分支有文件修改的情况下，git如何切换分支？ 
+
+15.java 如果对第三方包有依赖，如何解决？ 
+
+第五部分 编程题 
+
+    有一个字符串 “This is a programming issue”，找出其中出现次数最多的字符，不区分大小写 
+
+ 
+
+    输出指定长度的斐波纳契数列.      1，1，2，3，5， ... 
+
+ 
+
+    求 N 的阶乘 
+
+ 
+
+ 
 
  
