@@ -1,7 +1,6 @@
 # 人格类型 INFP-T
 
 一句话概括INFP：情绪深刻、敏感而又“迟钝”、理想主义、洞察力、三分钟热度、拖延症、抑郁倾向、同理心、利他主义、追求自我理解。
-</br>
 
 ![https://github.com/nicolas-chan/nicolas-chan.github.io/blob/main/supplement/INFP.png?raw=true]
 
