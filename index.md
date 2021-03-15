@@ -24,9 +24,7 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 
 ## 思想芦苇
 ### 禅茶一味
-### 毛选品读
 
-毛主席语录
 
 ### 思维导读
 
